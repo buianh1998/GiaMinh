@@ -1,0 +1,71 @@
+<!-- Page content -->
+<div class="container-fluid mt--7" style="padding-top: 150px;">
+  <div class="col-12">
+    <form #formNewDataCate="ngForm" (submit)="newDataCate(formNewDataCate)">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          name="Title"
+          ngModel
+        />
+        <div style="margin-top: 30px;">
+          <input type="submit" value="Add Category" class="btn btn-success" />
+        </div>
+
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+    </form>
+  </div>
+
+  <!-- Table -->
+  <div class="row" class="parent">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Card tables</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">DayAdded</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cate of Category">
+                <td>{{ cate._id }}</td>
+                <td>
+                  {{ cate.Title }}
+                </td>
+                <td>
+                  {{ cate.DayAdded }}
+                </td>
+                <td>
+                  <button class="btn btn-success" (click)="showEditForm(cate)">
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-danger"
+                    (click)="DeleteDataCate(cate._id)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <app-edit-category [idDataCate]="Datacate"></app-edit-category>
+  </div>
+  <!-- Dark table -->
+</div>
