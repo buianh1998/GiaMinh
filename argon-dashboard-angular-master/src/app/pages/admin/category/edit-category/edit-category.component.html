@@ -1,0 +1,31 @@
+<!-- Page content -->
+<div
+  class="container-fluid edit-category col-12"
+  style="padding-top: 150px;"
+  *ngIf="idDataCate"
+>
+  <h3 class="mb-0" style="margin-bottom: 500px;">Edit Cate</h3>
+
+  <form
+    #formEditDataCate="ngForm"
+    (submit)="editCateData(formEditDataCate)"
+    class="form-edit-category"
+  >
+    <div class="form-group">
+      <label class="thead-light" for="exampleInputEmail1">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Title"
+        name="Title"
+        [ngModel]="idDataCate.Title"
+        value=""
+      />
+      <div style="margin-top: 30px;">
+        <input type="submit" value="Edit Category" class="btn btn-success" />
+      </div>
+    </div>
+  </form>
+</div>

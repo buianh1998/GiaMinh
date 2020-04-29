@@ -1,0 +1,13 @@
+.edit-category {
+  background-color: white;
+  border-radius: 10px;
+  height: 337px;
+  border: thistle;
+  box-shadow: bisque;
+}
+.edit-category h2 {
+  margin-top: 300px !important;
+}
+.form-edit-category {
+  margin-bottom: 200px;
+}
